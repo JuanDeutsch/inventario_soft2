@@ -1,5 +1,6 @@
-package co.edu.unisabana.investario.Inventario;
+package co.edu.unisabana.investario.Inventario.bd;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -9,33 +10,31 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table (name = "inv_rest")
+@Data
 public class Producto {
 
     @Id
     @Column
-    private @Getter @Setter int id;
+    private int id;
     @Column
-    private @Getter @Setter String nombre;
+    private String nombre;
     @Column
-    private @Getter @Setter String descripcion;
+    private String descripcion;
     @Column
-    private @Getter @Setter int precio;
+    private int precio;
     @Column
-    private @Getter @Setter int cantidadinicial;
+    private int cantidadinicial;
     @Column
-    private @Getter @Setter String categoria;
+    private String categoria;
     @Column
     @CreatedDate
-    private @Getter @Setter LocalDate fechacreacion;
+    private LocalDateTime fechacreacion;
     @Column
     @LastModifiedDate
-    private @Getter @Setter LocalDate fechaact;
+    private LocalDateTime fechaact;
 
 }
