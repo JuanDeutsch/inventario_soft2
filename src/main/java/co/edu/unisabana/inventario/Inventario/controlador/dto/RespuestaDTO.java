@@ -1,4 +1,4 @@
-package co.edu.unisabana.investario.Inventario.controlador.dto;
+package co.edu.unisabana.inventario.Inventario.controlador.dto;
 
 import lombok.Data;
 

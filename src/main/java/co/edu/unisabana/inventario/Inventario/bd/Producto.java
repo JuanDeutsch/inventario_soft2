@@ -1,4 +1,4 @@
-package co.edu.unisabana.investario.Inventario.bd;
+package co.edu.unisabana.inventario.Inventario.bd;
 
 import lombok.Data;
 import lombok.Getter;

@@ -1,8 +1,8 @@
-package co.edu.unisabana.investario.Inventario.controlador;
+package co.edu.unisabana.inventario.Inventario.controlador;
 
-import co.edu.unisabana.investario.Inventario.bd.Producto;
-import co.edu.unisabana.investario.Inventario.controlador.dto.RespuestaDTO;
-import co.edu.unisabana.investario.Inventario.logica.InventarioLogica;
+import co.edu.unisabana.inventario.Inventario.bd.Producto;
+import co.edu.unisabana.inventario.Inventario.controlador.dto.RespuestaDTO;
+import co.edu.unisabana.inventario.Inventario.logica.InventarioLogica;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

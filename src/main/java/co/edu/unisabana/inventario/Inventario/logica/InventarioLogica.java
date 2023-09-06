@@ -1,7 +1,7 @@
-package co.edu.unisabana.investario.Inventario.logica;
+package co.edu.unisabana.inventario.Inventario.logica;
 
-import co.edu.unisabana.investario.Inventario.bd.Producto;
-import co.edu.unisabana.investario.Inventario.bd.ProductoRepository;
+import co.edu.unisabana.inventario.Inventario.bd.Producto;
+import co.edu.unisabana.inventario.Inventario.bd.ProductoRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
