@@ -50,8 +50,8 @@ public class InventarioController {
         }
     }
 
-    @GetMapping(path = "/verProducto/{id}")
-    public RespuestaDTO verPorID(@PathVariable int id){
+    @GetMapping(path = "/verProducto/id")
+    public RespuestaDTO verPorID(@RequestParam int id){
         try {
             logica.verProductoPorID(id);
             return new RespuestaDTO("Este es el Producto: "+logica.verProductoPorID(id));
