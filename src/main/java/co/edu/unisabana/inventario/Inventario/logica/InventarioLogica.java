@@ -39,7 +39,7 @@ public class InventarioLogica {
         productoActualizar.setNombre(actProducto.getNombre());
         productoActualizar.setDescripcion(actProducto.getDescripcion());
         productoActualizar.setPrecio(actProducto.getPrecio());
-        productoActualizar.setCantidadinicial(actProducto.getCantidadinicial());
+        productoActualizar.setStock(actProducto.getStock());
         productoActualizar.setCategoria(actProducto.getCategoria());
         productoActualizar.setFechaact(LocalDateTime.now());
         productoRepository.save(productoActualizar);

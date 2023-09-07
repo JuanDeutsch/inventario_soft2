@@ -25,7 +25,7 @@ public class Producto {
     @Column
     private int precio;
     @Column
-    private int cantidadinicial;
+    private int stock;
     @Column
     private String categoria;
     @Column
