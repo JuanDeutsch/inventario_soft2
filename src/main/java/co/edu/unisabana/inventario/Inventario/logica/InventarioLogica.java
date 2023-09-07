@@ -2,9 +2,11 @@ package co.edu.unisabana.inventario.Inventario.logica;
 
 import co.edu.unisabana.inventario.Inventario.bd.Producto;
 import co.edu.unisabana.inventario.Inventario.bd.ProductoRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,13 +19,14 @@ public class InventarioLogica {
         this.productoRepository = productoRepository;
     }
 
-    public List<Producto> verProducto(){
-        return productoRepository.findAll();
+    @Query("SELECT * FROM inv_rest i WHERE i.categoria LIKE %?1%")
+    public List<Producto> findAll(String categoria) {
+        return findAll(categoria);
     }
+
     public Optional<Producto> verProductoPorID(int id){
         return productoRepository.findById(id);
     }
-
     public void agregarProducto (Producto producto) {
             producto.setFechacreacion(LocalDateTime.now());
             producto.setFechaact(LocalDateTime.now());

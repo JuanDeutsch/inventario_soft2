@@ -1,8 +1,10 @@
 package co.edu.unisabana.inventario.Inventario.controlador;
 
 import co.edu.unisabana.inventario.Inventario.bd.Producto;
+import co.edu.unisabana.inventario.Inventario.bd.ProductoRepository;
 import co.edu.unisabana.inventario.Inventario.controlador.dto.RespuestaDTO;
 import co.edu.unisabana.inventario.Inventario.logica.InventarioLogica;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,11 +17,6 @@ public class InventarioController {
 
     public InventarioController(InventarioLogica logica) {
         this.logica = logica;
-    }
-
-    @GetMapping(path = "verProducto")
-    public List<Producto> buscarProducto(){
-        return logica.verProducto();
     }
 
     @PostMapping(path = "/producto/agregar")
@@ -53,14 +50,20 @@ public class InventarioController {
         }
     }
 
-    @GetMapping(path = "/verProducto/id")
-    public RespuestaDTO verPorID(@RequestParam int id){
+    @GetMapping(path = "/verProducto/{id}")
+    public RespuestaDTO verPorID(@PathVariable int id){
         try {
             logica.verProductoPorID(id);
             return new RespuestaDTO("Este es el Producto: "+logica.verProductoPorID(id));
         } catch (Exception e){
             return new RespuestaDTO("No existe ese ID");
         }
+    }
+
+    @GetMapping(path = "/verProductoPorCategoria")
+    public List<Producto> verPorCategoria(@Param("categoria") String categoria){
+        List<Producto> filtroCategoria = logica.findAll(categoria);
+        return filtroCategoria;
     }
 
 }
