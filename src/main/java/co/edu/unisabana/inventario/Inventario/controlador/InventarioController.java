@@ -1,10 +1,8 @@
 package co.edu.unisabana.inventario.Inventario.controlador;
 
 import co.edu.unisabana.inventario.Inventario.bd.Producto;
-import co.edu.unisabana.inventario.Inventario.bd.ProductoRepository;
 import co.edu.unisabana.inventario.Inventario.controlador.dto.RespuestaDTO;
 import co.edu.unisabana.inventario.Inventario.logica.InventarioLogica;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
