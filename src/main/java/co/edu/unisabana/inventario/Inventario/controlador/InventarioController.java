@@ -61,9 +61,17 @@ public class InventarioController {
     }
 
     @GetMapping(path = "/verProductoPorCategoria")
-    public List<Producto> verPorCategoria(@Param("categoria") String categoria){
-        List<Producto> filtroCategoria = logica.findAll(categoria);
-        return filtroCategoria;
+    public List<Producto> filtrarPorCategoria(@RequestParam("categoria") String categoria){
+        List<Producto> filtroCategoria = logica.filtrarPorCategoria(categoria);
+        if (filtroCategoria.isEmpty()) {
+            return null;
+        } else {
+            return filtroCategoria;
+        }
+    }
+    @GetMapping(path = "/verStockPorId")
+    public int obtenerStockPorId(@RequestParam("id") int id){
+        return logica.obtenerStockPorId(id);
     }
 
 }

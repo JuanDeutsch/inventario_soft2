@@ -11,17 +11,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class InventarioLogica {
+public class InventarioLogica{
 
     private ProductoRepository productoRepository;
 
     public InventarioLogica(ProductoRepository productoRepository) {
         this.productoRepository = productoRepository;
-    }
-
-    @Query("SELECT * FROM inv_rest i WHERE i.categoria LIKE %?1%")
-    public List<Producto> findAll(String categoria) {
-        return findAll(categoria);
     }
 
     public Optional<Producto> verProductoPorID(int id){
@@ -47,5 +42,11 @@ public class InventarioLogica {
         productoActualizar.setFechaact(LocalDateTime.now());
         productoRepository.save(productoActualizar);
 
+    }
+    public List<Producto> filtrarPorCategoria(String categoria){
+        return productoRepository.findByCategoria(categoria);
+    }
+    public int obtenerStockPorId(int id){
+        return productoRepository.obtenerStockPorId(id);
     }
 }
