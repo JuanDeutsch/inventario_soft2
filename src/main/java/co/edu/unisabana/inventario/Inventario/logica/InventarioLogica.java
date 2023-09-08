@@ -2,11 +2,9 @@ package co.edu.unisabana.inventario.Inventario.logica;
 
 import co.edu.unisabana.inventario.Inventario.bd.Producto;
 import co.edu.unisabana.inventario.Inventario.bd.ProductoRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
