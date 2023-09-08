@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public abstract class InventarioLogica implements ProductoRepository{
+public class InventarioLogica{
 
     private ProductoRepository productoRepository;
 
@@ -46,7 +46,7 @@ public abstract class InventarioLogica implements ProductoRepository{
     public List<Producto> filtrarPorCategoria(String categoria){
         return productoRepository.findByCategoria(categoria);
     }
-    public int obtenerStockProducto(int id){
+    public int obtenerStockPorId(int id){
         return productoRepository.obtenerStockPorId(id);
     }
 }
