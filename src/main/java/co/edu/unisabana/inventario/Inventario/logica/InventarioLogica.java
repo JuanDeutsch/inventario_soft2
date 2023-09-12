@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class InventarioLogica{
+public class InventarioLogica {
 
     private ProductoRepository productoRepository;
 
@@ -17,20 +17,21 @@ public class InventarioLogica{
         this.productoRepository = productoRepository;
     }
 
-    public Optional<Producto> verProductoPorID(int id){
+    public Optional<Producto> verProductoPorID(int id) {
         return productoRepository.findById(id);
     }
-    public void agregarProducto (Producto producto) {
-            producto.setFechaCreacion(LocalDateTime.now());
-            producto.setFechaAct(LocalDateTime.now());
-            productoRepository.save(producto);
+
+    public void agregarProducto(Producto producto) {
+        producto.setFechaCreacion(LocalDateTime.now());
+        producto.setFechaAct(LocalDateTime.now());
+        productoRepository.save(producto);
     }
 
-    public void eliminarProducto(int id){
+    public void eliminarProducto(int id) {
         productoRepository.deleteById(id);
     }
 
-    public void cambiarProducto(int id, Producto actProducto){
+    public void cambiarProducto(int id, Producto actProducto) {
         Producto productoActualizar = productoRepository.getReferenceById(id);
         productoActualizar.setNombre(actProducto.getNombre());
         productoActualizar.setDescripcion(actProducto.getDescripcion());
@@ -41,10 +42,12 @@ public class InventarioLogica{
         productoRepository.save(productoActualizar);
 
     }
-    public List<Producto> filtrarPorCategoria(String categoria){
+
+    public List<Producto> filtrarPorCategoria(String categoria) {
         return productoRepository.findByCategoria(categoria);
     }
-    public int obtenerStockPorId(int id){
+
+    public int obtenerStockPorId(int id) {
         return productoRepository.obtenerStockPorId(id);
     }
 }

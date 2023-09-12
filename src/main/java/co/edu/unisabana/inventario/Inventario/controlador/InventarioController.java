@@ -18,48 +18,48 @@ public class InventarioController {
     }
 
     @PostMapping(path = "/producto/agregar")
-    public RespuestaDTO agregarProducto (@RequestBody Producto producto){
-        try{
+    public RespuestaDTO agregarProducto(@RequestBody Producto producto) {
+        try {
             logica.agregarProducto(producto);
             return new RespuestaDTO("Producto guardado correctamente");
-        }catch(Exception e){
+        } catch (Exception e) {
             return new RespuestaDTO("Se genero un error al guardar el producto");
         }
 
     }
 
     @DeleteMapping(path = "/producto/eliminar")
-    public RespuestaDTO borrarProducto(@RequestParam int id){
+    public RespuestaDTO borrarProducto(@RequestParam int id) {
         try {
             logica.eliminarProducto(id);
             return new RespuestaDTO("Producto eliminado correctamente");
-        }catch (Exception e){
+        } catch (Exception e) {
             return new RespuestaDTO("El producto no se pudo eliminar");
         }
     }
 
     @PutMapping(path = "/producto/actualizar")
-    public RespuestaDTO actualizarProducto(@RequestBody Producto actProducto){
+    public RespuestaDTO actualizarProducto(@RequestBody Producto actProducto) {
         try {
             logica.cambiarProducto(actProducto.getId(), actProducto);
             return new RespuestaDTO("El producto ha actualizado");
-        } catch (Exception e){
+        } catch (Exception e) {
             return new RespuestaDTO("El producto no se pudo actualizar");
         }
     }
 
     @GetMapping(path = "/verProducto/id")
-    public RespuestaDTO verPorID(@RequestParam int id){
+    public RespuestaDTO verPorID(@RequestParam int id) {
         try {
             logica.verProductoPorID(id);
-            return new RespuestaDTO("Este es el Producto: "+logica.verProductoPorID(id));
-        } catch (Exception e){
+            return new RespuestaDTO("Este es el Producto: " + logica.verProductoPorID(id));
+        } catch (Exception e) {
             return new RespuestaDTO("No existe ese ID");
         }
     }
 
     @GetMapping(path = "/verProductoPorCategoria")
-    public List<Producto> filtrarPorCategoria(@RequestParam("categoria") String categoria){
+    public List<Producto> filtrarPorCategoria(@RequestParam("categoria") String categoria) {
         List<Producto> filtroCategoria = logica.filtrarPorCategoria(categoria);
         if (filtroCategoria.isEmpty()) {
             return null;
@@ -67,8 +67,9 @@ public class InventarioController {
             return filtroCategoria;
         }
     }
+
     @GetMapping(path = "/verStockPorId")
-    public int obtenerStockPorId(@RequestParam("id") int id){
+    public int obtenerStockPorId(@RequestParam("id") int id) {
         return logica.obtenerStockPorId(id);
     }
 
