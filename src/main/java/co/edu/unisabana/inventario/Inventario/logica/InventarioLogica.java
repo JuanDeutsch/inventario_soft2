@@ -21,8 +21,8 @@ public class InventarioLogica{
         return productoRepository.findById(id);
     }
     public void agregarProducto (Producto producto) {
-            producto.setFechacreacion(LocalDateTime.now());
-            producto.setFechaact(LocalDateTime.now());
+            producto.setFechaCreacion(LocalDateTime.now());
+            producto.setFechaAct(LocalDateTime.now());
             productoRepository.save(producto);
     }
 
@@ -37,7 +37,7 @@ public class InventarioLogica{
         productoActualizar.setPrecio(actProducto.getPrecio());
         productoActualizar.setStock(actProducto.getStock());
         productoActualizar.setCategoria(actProducto.getCategoria());
-        productoActualizar.setFechaact(LocalDateTime.now());
+        productoActualizar.setFechaAct(LocalDateTime.now());
         productoRepository.save(productoActualizar);
 
     }

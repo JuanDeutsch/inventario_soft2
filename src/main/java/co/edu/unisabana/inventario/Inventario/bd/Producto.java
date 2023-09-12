@@ -11,7 +11,7 @@ import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
-@Table (name = "inv_rest")
+@Table(name = "inv_rest")
 @Data
 public class Producto {
 
@@ -28,11 +28,11 @@ public class Producto {
     private int stock;
     @Column
     private String categoria;
-    @Column
+    @Column(name = "fechacreacion")
     @CreatedDate
-    private LocalDateTime fechacreacion;
-    @Column
+    private LocalDateTime fechaCreacion;
+    @Column(name = "fechaact")
     @LastModifiedDate
-    private LocalDateTime fechaact;
+    private LocalDateTime fechaAct;
 
 }
