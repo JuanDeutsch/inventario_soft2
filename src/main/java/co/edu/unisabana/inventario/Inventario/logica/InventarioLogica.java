@@ -2,6 +2,7 @@ package co.edu.unisabana.inventario.Inventario.logica;
 
 import co.edu.unisabana.inventario.Inventario.bd.Producto;
 import co.edu.unisabana.inventario.Inventario.bd.ProductoRepository;
+import co.edu.unisabana.inventario.Inventario.controlador.dto.ProductoDTO;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -21,7 +22,14 @@ public class InventarioLogica {
         return productoRepository.findById(id);
     }
 
-    public void agregarProducto(Producto producto) {
+    public void agregarProducto(ProductoDTO productoDTO) {
+        Producto producto = new Producto();
+        producto.setId(productoDTO.getId());
+        producto.setNombre(productoDTO.getNombre());
+        producto.setDescripcion(productoDTO.getDescripcion());
+        producto.setPrecio(productoDTO.getPrecio());
+        producto.setStock(productoDTO.getStock());
+        producto.setCategoria(productoDTO.getCategoria());
         producto.setFechaCreacion(LocalDateTime.now());
         producto.setFechaAct(LocalDateTime.now());
         productoRepository.save(producto);
@@ -31,7 +39,7 @@ public class InventarioLogica {
         productoRepository.deleteById(id);
     }
 
-    public void cambiarProducto(int id, Producto actProducto) {
+    public void cambiarProducto(int id, ProductoDTO actProducto) {
         Producto productoActualizar = productoRepository.getReferenceById(id);
         productoActualizar.setNombre(actProducto.getNombre());
         productoActualizar.setDescripcion(actProducto.getDescripcion());

@@ -1,6 +1,7 @@
 package co.edu.unisabana.inventario.Inventario.controlador;
 
 import co.edu.unisabana.inventario.Inventario.bd.Producto;
+import co.edu.unisabana.inventario.Inventario.controlador.dto.ProductoDTO;
 import co.edu.unisabana.inventario.Inventario.controlador.dto.RespuestaDTO;
 import co.edu.unisabana.inventario.Inventario.logica.InventarioLogica;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +19,9 @@ public class InventarioController {
     }
 
     @PostMapping(path = "/producto/agregar")
-    public RespuestaDTO agregarProducto(@RequestBody Producto producto) {
+    public RespuestaDTO agregarProducto(@RequestBody ProductoDTO productoDTO) {
         try {
-            logica.agregarProducto(producto);
+            logica.agregarProducto(productoDTO);
             return new RespuestaDTO("Producto guardado correctamente");
         } catch (Exception e) {
             return new RespuestaDTO("Se genero un error al guardar el producto");
@@ -39,7 +40,7 @@ public class InventarioController {
     }
 
     @PutMapping(path = "/producto/actualizar")
-    public RespuestaDTO actualizarProducto(@RequestBody Producto actProducto) {
+    public RespuestaDTO actualizarProducto(@RequestBody ProductoDTO actProducto) {
         try {
             logica.cambiarProducto(actProducto.getId(), actProducto);
             return new RespuestaDTO("El producto ha actualizado");
