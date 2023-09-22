@@ -47,6 +47,7 @@ class InventarioLogicaTest {
 
     @Test
     void eliminarProducto() {
+        //Mockito.verify(repository).delete(producto);
     }
 
     @Test
