@@ -22,7 +22,7 @@ public class InventarioLogica {
         return productoRepository.findById(id);
     }
 
-    public void agregarProducto(ProductoDTO productoDTO) {
+    public Producto agregarProducto(ProductoDTO productoDTO) {
         Producto producto = new Producto();
         producto.setId(productoDTO.getId());
         producto.setNombre(productoDTO.getNombre());
@@ -33,6 +33,7 @@ public class InventarioLogica {
         producto.setFechaCreacion(LocalDateTime.now());
         producto.setFechaAct(LocalDateTime.now());
         productoRepository.save(producto);
+        return producto;
     }
 
     public void eliminarProducto(int id) {
