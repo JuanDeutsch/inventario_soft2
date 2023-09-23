@@ -36,8 +36,9 @@ public class InventarioLogica {
         return producto;
     }
 
-    public void eliminarProducto(int id) {
+    public boolean eliminarProducto(int id) {
         productoRepository.deleteById(id);
+        return true;
     }
 
     public void cambiarProducto(int id, ProductoDTO actProducto) {
