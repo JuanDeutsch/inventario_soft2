@@ -52,6 +52,7 @@ class InventarioLogicaTest {
         boolean borrado = logica.eliminarProducto(productoDTO.getId());
         assertTrue(borrado);
         Mockito.verify(repository).deleteById(7);
+
     }
 
     @Test
