@@ -46,8 +46,13 @@ class InventarioLogicaTest {
     }
 
     @Test
-    void eliminarProducto() {
-        //Mockito.verify(repository).delete(producto);
+    void eliminarProductoTest() {
+        ProductoDTO productoDTO = new ProductoDTO();
+        productoDTO.setId(7);
+        boolean borrado = logica.eliminarProducto(productoDTO.getId());
+        assertTrue(borrado);
+        Mockito.verify(repository).deleteById(7);
+
     }
 
     @Test
