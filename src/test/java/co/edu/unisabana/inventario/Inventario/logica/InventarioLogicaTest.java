@@ -11,6 +11,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class InventarioLogicaTest {
@@ -56,6 +57,27 @@ class InventarioLogicaTest {
 
     @Test
     void cambiarProducto() {
+        int id = 7;
+        ProductoDTO productoDTO = new ProductoDTO();
+        productoDTO.setId(id);
+        productoDTO.setNombre("Guitarra");
+        productoDTO.setDescripcion("Instrumento de cuerdas común");
+        productoDTO.setPrecio(13);
+        productoDTO.setStock(15);
+        productoDTO.setCategoria("Instrumentos");
+
+        Producto producto = new Producto();
+
+        when(repository.getReferenceById(id)).thenReturn(producto);
+        logica.cambiarProducto(id, productoDTO);
+
+        assertEquals(productoDTO.getNombre(), producto.getNombre());
+        assertEquals(productoDTO.getDescripcion(), producto.getDescripcion());
+        assertEquals(productoDTO.getPrecio(), producto.getPrecio());
+        assertEquals(productoDTO.getStock(), producto.getStock());
+        assertEquals(productoDTO.getCategoria(), producto.getCategoria());
+
+        Mockito.verify(repository).save(producto);
     }
 
     @Test
