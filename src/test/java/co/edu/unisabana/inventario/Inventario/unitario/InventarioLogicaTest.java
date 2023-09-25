@@ -1,8 +1,9 @@
-package co.edu.unisabana.inventario.Inventario.logica;
+package co.edu.unisabana.inventario.Inventario.unitario;
 
 import co.edu.unisabana.inventario.Inventario.bd.Producto;
 import co.edu.unisabana.inventario.Inventario.bd.ProductoRepository;
 import co.edu.unisabana.inventario.Inventario.controlador.dto.ProductoDTO;
+import co.edu.unisabana.inventario.Inventario.logica.InventarioLogica;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
