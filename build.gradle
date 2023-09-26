@@ -34,6 +34,11 @@ tasks.named('test') {
 
 test {
     finalizedBy jacocoTestReport
+        jacoco{
+            classDumpDir = file("$buildDir/jacoco/classes")
+            exclude '**/generated-sources/**'
+        }
+
 }
 jacocoTestReport {
     dependsOn test
