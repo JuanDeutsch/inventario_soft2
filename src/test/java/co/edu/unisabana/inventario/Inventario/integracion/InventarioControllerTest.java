@@ -26,7 +26,7 @@ class InventarioControllerTest {
 
     @Test
     void Dado_no_dto_existente_Cuando_controlador_agregar_producto_Entonces_agrega_dto() {
-        ProductoDTO dtoAgr = new ProductoDTO(7, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
+        ProductoDTO dtoAgr = new ProductoDTO(8, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
         ResponseEntity<RespuestaDTO> respuesta = rest.postForEntity(
                 "/producto/agregar", dtoAgr, RespuestaDTO.class);
         assertEquals("Producto guardado correctamente", respuesta.getBody().getMensaje());
@@ -42,6 +42,15 @@ class InventarioControllerTest {
         ResponseEntity<RespuestaDTO> respuestaBorrar = rest.exchange(
                 "/producto/eliminar?id=" + dtoDel.getId(), HttpMethod.DELETE, null, RespuestaDTO.class);
         assertEquals("Producto eliminado correctamente", respuestaBorrar.getBody().getMensaje());
+    }
+
+    @Test
+    void Dado_dto_existente_Cuando_controlador_borrar_producto_Entonces_no_borra_dto() {
+        ProductoDTO dtoDel = new ProductoDTO(7, "Guitarra", "Instrumento de cuerdas", 13, 15, "Instrumentos");
+
+        ResponseEntity<RespuestaDTO> respuestaBorrar = rest.exchange(
+                "/producto/eliminar?id=" + dtoDel.getId(), HttpMethod.DELETE, null, RespuestaDTO.class);
+        assertEquals("El producto no se pudo eliminar", respuestaBorrar.getBody().getMensaje());
     }
 
     @Test
