@@ -11,7 +11,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class InventarioLogicaTest {
@@ -24,6 +27,22 @@ class InventarioLogicaTest {
 
     @Test
     void verProductoPorID() {
+        Producto producto = new Producto();
+        producto.setId(7);
+        producto.setNombre("Guitarra");
+        producto.setDescripcion("Instrumento de cuerdas comun");
+        producto.setPrecio(13);
+        producto.setStock(15);
+        producto.setCategoria("Instrumentos");
+
+        when(repository.findById(producto.getId())).thenReturn(Optional.of(producto));
+
+        Optional<Producto> productoOpt = logica.verProductoPorID(7);
+
+        assertTrue(productoOpt.isPresent());
+        assertEquals(producto, productoOpt.get());
+
+        Mockito.verify(repository).findById(producto.getId());
     }
 
     @Test
@@ -58,6 +77,27 @@ class InventarioLogicaTest {
 
     @Test
     void cambiarProducto() {
+        int id = 7;
+        ProductoDTO productoDTO = new ProductoDTO();
+        productoDTO.setId(id);
+        productoDTO.setNombre("Guitarra");
+        productoDTO.setDescripcion("Instrumento de cuerdas común");
+        productoDTO.setPrecio(13);
+        productoDTO.setStock(15);
+        productoDTO.setCategoria("Instrumentos");
+
+        Producto producto = new Producto();
+
+        when(repository.getReferenceById(id)).thenReturn(producto);
+        logica.cambiarProducto(id, productoDTO);
+
+        assertEquals(productoDTO.getNombre(), producto.getNombre());
+        assertEquals(productoDTO.getDescripcion(), producto.getDescripcion());
+        assertEquals(productoDTO.getPrecio(), producto.getPrecio());
+        assertEquals(productoDTO.getStock(), producto.getStock());
+        assertEquals(productoDTO.getCategoria(), producto.getCategoria());
+
+        Mockito.verify(repository).save(producto);
     }
 
     @Test
