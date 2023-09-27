@@ -9,6 +9,9 @@ public class RespuestaDTO {
     public RespuestaDTO(String mensaje) {
         this.mensaje = mensaje;
     }
+
+    public RespuestaDTO() {
+    }
 }
 
 
