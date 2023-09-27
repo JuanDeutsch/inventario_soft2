@@ -10,6 +10,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
@@ -24,6 +26,22 @@ class InventarioLogicaTest {
 
     @Test
     void verProductoPorID() {
+        Producto producto = new Producto();
+        producto.setId(7);
+        producto.setNombre("Guitarra");
+        producto.setDescripcion("Instrumento de cuerdas comun");
+        producto.setPrecio(13);
+        producto.setStock(15);
+        producto.setCategoria("Instrumentos");
+
+        when(repository.findById(producto.getId())).thenReturn(Optional.of(producto));
+
+        Optional<Producto> productoOpt = logica.verProductoPorID(7);
+
+        assertTrue(productoOpt.isPresent());
+        assertEquals(producto, productoOpt.get());
+
+        Mockito.verify(repository).findById(producto.getId());
     }
 
     @Test
