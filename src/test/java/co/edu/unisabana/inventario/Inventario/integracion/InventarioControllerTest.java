@@ -25,7 +25,7 @@ class InventarioControllerTest {
     TestRestTemplate rest;
 
     @Test
-    void agregarProductoTest() {
+    void Dado_no_dto_existente_Cuando_controlador_agregar_producto_Entonces_agrega_dto() {
         ProductoDTO dtoAgr = new ProductoDTO(7, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
         ResponseEntity<RespuestaDTO> respuesta = rest.postForEntity(
                 "/producto/agregar", dtoAgr, RespuestaDTO.class);
