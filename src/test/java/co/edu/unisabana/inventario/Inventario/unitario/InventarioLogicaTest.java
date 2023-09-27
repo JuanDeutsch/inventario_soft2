@@ -26,7 +26,7 @@ class InventarioLogicaTest {
     ProductoRepository repository;
 
     @Test
-    void verProductoPorID() {
+    void Dado_producto_Cuando_logica_ver_por_id_Entonces_ver_producto() {
         Producto producto = new Producto();
         producto.setId(7);
         producto.setNombre("Guitarra");
@@ -46,7 +46,7 @@ class InventarioLogicaTest {
     }
 
     @Test
-    void agregarProductoTest() {
+    void Dado_producto_nuevo_Cuando_logica_agregar_Entonces_agregar_producto() {
         ProductoDTO productoDTO = new ProductoDTO();
         productoDTO.setId(7);
         productoDTO.setNombre("Guitarra");
@@ -66,7 +66,7 @@ class InventarioLogicaTest {
     }
 
     @Test
-    void eliminarProductoTest() {
+    void Dado_producto_existente_Cuando_logica_eliminar_Entonces_borrar_producto_logico() {
         ProductoDTO productoDTO = new ProductoDTO();
         productoDTO.setId(7);
         boolean borrado = logica.eliminarProducto(productoDTO.getId());
@@ -76,7 +76,7 @@ class InventarioLogicaTest {
     }
 
     @Test
-    void cambiarProducto() {
+    void Dado_producto_existente_Cuando_logica_actualizar_Entonces_actualizar_producto() {
         int id = 7;
         ProductoDTO productoDTO = new ProductoDTO();
         productoDTO.setId(id);
