@@ -68,6 +68,17 @@ class InventarioControllerTest {
     }
 
     @Test
+    void Dado_dto_existente_Cuando_controlador_actualizar_producto_Entonces_no_actualiza_dto() {
+        ProductoDTO dtoAct = new ProductoDTO(9, "Guitarra", "Instrumento de cuerdas", 20, 25, "Instrumentos");
+
+        ResponseEntity<RespuestaDTO> respuestaActualizar = rest.exchange(
+                "/producto/actualizar?id=" + dtoAct.getId(), HttpMethod.PUT, new HttpEntity<>(dtoAct), RespuestaDTO.class);
+
+        RespuestaDTO respuesta = respuestaActualizar.getBody();
+        assertEquals("El producto no se pudo actualizar", respuesta.getMensaje());
+    }
+
+    @Test
     void Dado_dto_existente_Cuando_controlador_ver_producto_por_id_Entonces_visualiza_dto_nombre() {
         ProductoDTO dtoVer = new ProductoDTO(7, "Guitarra", "Instrumento de cuerdas", 20, 25, "Instrumentos");
         ResponseEntity<RespuestaDTO> respuestaAgregar = rest.postForEntity(
