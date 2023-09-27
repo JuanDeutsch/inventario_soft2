@@ -14,6 +14,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -51,15 +52,24 @@ class InventarioControllerTest {
         assertEquals("Producto guardado correctamente", respuestaAgregar.getBody().getMensaje());
 
         ResponseEntity<RespuestaDTO> respuestaActualizar = rest.exchange(
-                "/producto/actualizar?id=", HttpMethod.PUT, new HttpEntity<>(dtoAct), RespuestaDTO.class);
+                "/producto/actualizar?id=" + dtoAct.getId(), HttpMethod.PUT, new HttpEntity<>(dtoAct), RespuestaDTO.class);
 
         RespuestaDTO respuesta = respuestaActualizar.getBody();
         assertEquals("El producto ha actualizado", respuesta.getMensaje());
     }
 
     @Test
-    void verPorID() {
-        ProductoDTO dto = new ProductoDTO(7, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
+    void Dado_dto_existente_Cuando_controlador_ver_producto_por_id_Entonces_visualiza_dto_nombre() {
+        ProductoDTO dtoVer = new ProductoDTO(7, "Guitarra", "Instrumento de cuerdas", 20, 25, "Instrumentos");
+        ResponseEntity<RespuestaDTO> respuestaAgregar = rest.postForEntity(
+                "/producto/agregar", dtoVer, RespuestaDTO.class);
+        assertEquals("Producto guardado correctamente", respuestaAgregar.getBody().getMensaje());
+
+        ResponseEntity<RespuestaDTO> respuestaVer = rest.exchange(
+                "/verProducto/id?id=" + dtoVer.getId(), HttpMethod.GET, new HttpEntity<>(dtoVer), RespuestaDTO.class);
+
+        RespuestaDTO respuesta = respuestaVer.getBody();
+        assertTrue(respuesta.getMensaje().contains("Guitarra"));
     }
 
     @Test
