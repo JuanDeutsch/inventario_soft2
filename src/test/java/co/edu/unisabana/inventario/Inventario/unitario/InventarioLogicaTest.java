@@ -11,6 +11,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -101,10 +102,39 @@ class InventarioLogicaTest {
     }
 
     @Test
-    void filtrarPorCategoria() {
+    void Dado_categoria_Cuando_filtrar_por_categoria_correcta_Entonces_obtener_productos_por_categoria() {
+        String categoria = "Tecnologia";
+        Producto producto = new Producto();
+
+        producto.setId(10);
+        producto.setNombre("AR SET");
+        producto.setDescripcion("Gafas de realidad aumentada");
+        producto.setPrecio(80);
+        producto.setStock(6);
+        producto.setCategoria(categoria);
+
+        when(repository.findByCategoria(categoria)).thenReturn(List.of(producto));
+
+        List<Producto> resultado = logica.filtrarPorCategoria(categoria);
+
+        assertEquals(1, resultado.size());
+
+        assertEquals(categoria, resultado.get(0).getCategoria());
+
+        Mockito.verify(repository).findByCategoria(categoria);
     }
 
     @Test
     void obtenerStockPorId() {
+        int id = 42;
+        int stockEsperado = 10;
+
+        when(repository.obtenerStockPorId(id)).thenReturn(stockEsperado);
+
+        int stockObtenido = logica.obtenerStockPorId(id);
+
+        assertEquals(stockEsperado, stockObtenido);
+
+        Mockito.verify(repository).obtenerStockPorId(id);
     }
 }
