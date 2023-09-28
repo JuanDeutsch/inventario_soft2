@@ -4,12 +4,15 @@ import co.edu.unisabana.inventario.Inventario.bd.Producto;
 import co.edu.unisabana.inventario.Inventario.controlador.dto.ProductoDTO;
 import co.edu.unisabana.inventario.Inventario.controlador.dto.RespuestaDTO;
 import co.edu.unisabana.inventario.Inventario.logica.InventarioLogica;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 
+
 @RestController
+@Api(value = "Inventario", description = "Operaciones relacionadas con la gestión de inventario")
 public class InventarioController {
 
     public InventarioLogica logica;
@@ -18,6 +21,7 @@ public class InventarioController {
         this.logica = logica;
     }
 
+    @ApiOperation(value = "Crear un producto", response = Producto.class)
     @PostMapping(path = "/producto/agregar")
     public RespuestaDTO agregarProducto(@RequestBody ProductoDTO productoDTO) {
         try {
@@ -29,6 +33,7 @@ public class InventarioController {
 
     }
 
+    @ApiOperation(value = "Eliminar un producto por su ID", response = Producto.class)
     @DeleteMapping(path = "/producto/eliminar")
     public RespuestaDTO borrarProducto(@RequestParam int id) {
         try {
@@ -39,6 +44,7 @@ public class InventarioController {
         }
     }
 
+    @ApiOperation(value = "Actualizar un producto", response = Producto.class)
     @PutMapping(path = "/producto/actualizar")
     public RespuestaDTO actualizarProducto(@RequestBody ProductoDTO actProducto) {
         try {
@@ -49,6 +55,7 @@ public class InventarioController {
         }
     }
 
+    @ApiOperation(value = "Obtener un producto por su ID", response = Producto.class)
     @GetMapping(path = "/verProducto/id")
     public RespuestaDTO verPorID(@RequestParam int id) {
         try {
@@ -59,6 +66,7 @@ public class InventarioController {
         }
     }
 
+    @ApiOperation(value = "Obtener productos por categoría", response = Producto.class)
     @GetMapping(path = "/verProductoPorCategoria")
     public List<Producto> filtrarPorCategoria(@RequestParam("categoria") String categoria) {
         List<Producto> filtroCategoria = logica.filtrarPorCategoria(categoria);
@@ -69,9 +77,11 @@ public class InventarioController {
         }
     }
 
+    @ApiOperation(value = "Obtener un stock por su ID", response = Producto.class)
     @GetMapping(path = "/verStockPorId")
     public int obtenerStockPorId(@RequestParam("id") int id) {
         return logica.obtenerStockPorId(id);
     }
 
 }
+
