@@ -21,8 +21,8 @@ public class InventarioController {
         this.logica = logica;
     }
 
-    @PostMapping(path = "/producto/agregar")
     @ApiOperation(value = "Crear un producto", response = Producto.class)
+    @PostMapping(path = "/producto/agregar")
     public RespuestaDTO agregarProducto(@RequestBody ProductoDTO productoDTO) {
         try {
             logica.agregarProducto(productoDTO);
@@ -33,8 +33,8 @@ public class InventarioController {
 
     }
 
-    @DeleteMapping(path = "/producto/eliminar")
     @ApiOperation(value = "Eliminar un producto por su ID", response = Producto.class)
+    @DeleteMapping(path = "/producto/eliminar")
     public RespuestaDTO borrarProducto(@RequestParam int id) {
         try {
             logica.eliminarProducto(id);
@@ -44,8 +44,8 @@ public class InventarioController {
         }
     }
 
-    @PutMapping(path = "/producto/actualizar")
     @ApiOperation(value = "Actualizar un producto", response = Producto.class)
+    @PutMapping(path = "/producto/actualizar")
     public RespuestaDTO actualizarProducto(@RequestBody ProductoDTO actProducto) {
         try {
             logica.cambiarProducto(actProducto.getId(), actProducto);
@@ -55,8 +55,8 @@ public class InventarioController {
         }
     }
 
-    @GetMapping(path = "/verProducto/id")
     @ApiOperation(value = "Obtener un producto por su ID", response = Producto.class)
+    @GetMapping(path = "/verProducto/id")
     public RespuestaDTO verPorID(@RequestParam int id) {
         try {
             logica.verProductoPorID(id);
@@ -66,8 +66,8 @@ public class InventarioController {
         }
     }
 
-    @GetMapping(path = "/verProductoPorCategoria")
     @ApiOperation(value = "Obtener productos por categoría", response = Producto.class)
+    @GetMapping(path = "/verProductoPorCategoria")
     public List<Producto> filtrarPorCategoria(@RequestParam("categoria") String categoria) {
         List<Producto> filtroCategoria = logica.filtrarPorCategoria(categoria);
         if (filtroCategoria.isEmpty()) {
@@ -77,8 +77,8 @@ public class InventarioController {
         }
     }
 
-    @GetMapping(path = "/verStockPorId")
     @ApiOperation(value = "Obtener un stock por su ID", response = Producto.class)
+    @GetMapping(path = "/verStockPorId")
     public int obtenerStockPorId(@RequestParam("id") int id) {
         return logica.obtenerStockPorId(id);
     }
