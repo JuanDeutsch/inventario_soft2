@@ -97,13 +97,12 @@ class InventarioControllerTest {
     }
 
     @Test
-    void filtrarPorCategoria() {
+    void Dado_categoria_Cuando_controlador_busqueda_por_categoria_Entonces_obtener_productos_por_categoria() {
         ProductoDTO dtoCat = new ProductoDTO(8, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
         ResponseEntity<RespuestaDTO> respuesta = rest.postForEntity(
                 "/producto/agregar", dtoCat, RespuestaDTO.class);
         assertEquals("Producto guardado correctamente", respuesta.getBody().getMensaje());
 
-        // Realiza una solicitud GET al controlador para filtrar por la categoría definida.
         ResponseEntity<List<Producto>> response = rest.exchange(
                 "/verProductoPorCategoria?categoria=" + dtoCat.getCategoria(),
                 HttpMethod.GET,
@@ -119,7 +118,7 @@ class InventarioControllerTest {
     }
 
     @Test
-    void obtenerStockPorId() {
+    void Dado_id_producto_Cuando_controlador_obtener_stock_por_id_Entonces_obtener_stock_por_id() {
         ProductoDTO dtoSto = new ProductoDTO(8, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
         ResponseEntity<RespuestaDTO> respuesta = rest.postForEntity(
                 "/producto/agregar", dtoSto, RespuestaDTO.class);
