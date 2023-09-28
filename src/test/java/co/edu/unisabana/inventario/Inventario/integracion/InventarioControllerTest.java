@@ -1,5 +1,6 @@
 package co.edu.unisabana.inventario.Inventario.integracion;
 
+import co.edu.unisabana.inventario.Inventario.bd.Producto;
 import co.edu.unisabana.inventario.Inventario.controlador.dto.ProductoDTO;
 import co.edu.unisabana.inventario.Inventario.controlador.dto.RespuestaDTO;
 import org.junit.jupiter.api.Test;
@@ -7,14 +8,17 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -93,10 +97,41 @@ class InventarioControllerTest {
     }
 
     @Test
-    void filtrarPorCategoria() {
+    void Dado_categoria_Cuando_controlador_busqueda_por_categoria_Entonces_obtener_productos_por_categoria() {
+        ProductoDTO dtoCat = new ProductoDTO(8, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
+        ResponseEntity<RespuestaDTO> respuesta = rest.postForEntity(
+                "/producto/agregar", dtoCat, RespuestaDTO.class);
+        assertEquals("Producto guardado correctamente", respuesta.getBody().getMensaje());
+
+        ResponseEntity<List<Producto>> response = rest.exchange(
+                "/verProductoPorCategoria?categoria=" + dtoCat.getCategoria(),
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {
+                });
+
+        List<Producto> productoCat = response.getBody();
+
+        boolean categoriaCorrectaEnProductos = productoCat.stream()
+                .anyMatch(producto -> "Instrumentos".equals(dtoCat.getCategoria()));
+        assertTrue(categoriaCorrectaEnProductos);
     }
 
     @Test
-    void obtenerStockPorId() {
+    void Dado_id_producto_Cuando_controlador_obtener_stock_por_id_Entonces_obtener_stock_por_id() {
+        ProductoDTO dtoSto = new ProductoDTO(8, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
+        ResponseEntity<RespuestaDTO> respuesta = rest.postForEntity(
+                "/producto/agregar", dtoSto, RespuestaDTO.class);
+        assertEquals("Producto guardado correctamente", respuesta.getBody().getMensaje());
+
+        ResponseEntity<Integer> response = rest.exchange(
+                "/verStockPorId?id=" + dtoSto.getId(),
+                HttpMethod.GET,
+                null,
+                Integer.class);
+
+        Integer stock = response.getBody();
+        assertNotNull(stock);
+        assertTrue(stock >= 0);
     }
 }

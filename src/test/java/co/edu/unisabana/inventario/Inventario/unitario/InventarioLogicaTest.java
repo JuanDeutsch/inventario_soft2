@@ -102,7 +102,7 @@ class InventarioLogicaTest {
     }
 
     @Test
-    void Dado_categoria_Cuando_filtrar_por_categoria_correcta_Entonces_obtener_productos_por_categoria() {
+    void Dado_categoria_Cuando_filtrar_por_categoria_Entonces_obtener_productos_por_categoria() {
         String categoria = "Tecnologia";
         Producto producto = new Producto();
 
@@ -125,7 +125,7 @@ class InventarioLogicaTest {
     }
 
     @Test
-    void obtenerStockPorId() {
+    void Dado_id_producto_Cuando_obtener_stock_por_id_Entonces_obtener_stock_producto() {
         int id = 42;
         int stockEsperado = 10;
 
