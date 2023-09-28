@@ -29,7 +29,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("co.edu.unisabana.inventario.Inventario.controlador")) // Reemplaza con tu paquete base
+                .apis(RequestHandlerSelectors.basePackage("co.edu.unisabana.inventario.Inventario.controlador"))
                 .paths(PathSelectors.any())
                 .build();
     }
