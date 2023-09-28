@@ -1,16 +1,21 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.7.15'
+    id 'org.springframework.boot' version '2.7.16'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
     id 'jacoco'
+    id 'info.solidsoft.pitest' version '1.9.0'
 }
 
-group = 'co.edu.unisabana.investario'
+group = 'co.edu.unisabana.inventario'
 version = '0.0.1-SNAPSHOT'
 
 java {
-    sourceCompatibility = '17'
-    targetCompatibility = '17'
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+pitest {
+    junit5PluginVersion = '1.0.0'
 }
 
 repositories {
@@ -29,6 +34,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'io.springfox:springfox-boot-starter:3.0.0'
     implementation("io.springfox:springfox-swagger-ui:3.0.0")
+
 }
 
 tasks.named('test') {
