@@ -10,4 +10,16 @@ public class ProductoDTO {
     private int precio;
     private int stock;
     private String categoria;
+
+    public ProductoDTO(int id, String nombre, String descripcion, int precio, int stock, String categoria) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.stock = stock;
+        this.categoria = categoria;
+    }
+
+    public ProductoDTO() {
+    }
 }
