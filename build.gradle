@@ -52,7 +52,8 @@ jacocoTestReport {
         classDirectories = files(classDirectories.files.collect {
             fileTree(dir: it,
                     exclude: ['co/edu/unisabana/inventario/Inventario/controlador/dto',
-                              'co/edu/unisabana/inventario/Inventario/bd'])
+                              'co/edu/unisabana/inventario/Inventario/bd',
+                              'co/edu/unisabana/inventario/Inventario/configuraciones'])
         })
     }
 
