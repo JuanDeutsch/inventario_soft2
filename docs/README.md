@@ -1,3 +1,4 @@
+<<<<<<< HEAD:README.md
 ﻿# inventario_soft2
 
  Equipo Los 3 Softweteros conformado por: 
@@ -66,11 +67,5 @@ Una vez dentro colocaremos la categoria que le asignamos al pantalon que en este
 Despues de uan corta espera, podemos observar como nos paracesera nuestro producto actualizado y localizado por su categoria: 
 
 ![img_23.png](img_23.png)
-
-
-
-
-
-
 
 
