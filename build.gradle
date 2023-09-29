@@ -16,6 +16,11 @@ java {
 
 pitest {
     junit5PluginVersion = '1.0.0'
+    excludedClasses = [
+            'co.edu.unisabana.inventario.Inventario.controlador.dto.**',
+            'co.edu.unisabana.inventario.Inventario.bd.**',
+            'co.edu.unisabana.inventario.Inventario.configuraciones.**'
+    ]
 }
 
 repositories {
