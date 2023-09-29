@@ -40,8 +40,8 @@ Una vez actuializados los datos necesarios le daremos al boton de "Execute" ubic
 
 Despues de darle al boton "Execute" pueden ocurrir dos casos interesantes: 
 
-Caso#1: El producto no se pudo actualizar debido a un error en la digitacion de los datos a actualizar, por loq ue saldria el siguiente mensaje: 
-
+Caso#1: El producto no se pudo actualizar debido a un error en la digitacion de los datos a actualizar, por lo que saldria el siguiente mensaje: 
+git 
 ![img_12.png](img_12.png)
 
 Caso#2: El producto se actualizo correctamente por lo que aparecera el siguiente mensaje: 
