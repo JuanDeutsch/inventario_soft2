@@ -1,5 +1,7 @@
 FROM openjdk:17-oracle as build
 
-COPY build/libs/Inventario-*.jar Inventario.jar
+ARG JAR_FILE=build/libs/Inventario-0.0.1-SNAPSHOT.jar
 
-CMD ["java", "-jar", "Inventario.jar"]
+COPY ${JAR_FILE} Inventario.jar
+
+ENTRYPOINT ["java", "-jar", "/Inventario.jar"]
