@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: mr-smithers-excellent/docker-build-push@v6
-      - name: Build & push Docker image
+        name: Build & push Docker image
         with:
           image: juandeutsch/inventariosoft2
           tags: latest
