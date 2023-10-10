@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>InventarioController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Inventario</a> &gt; <a href="index.source.html" class="el_package">co.edu.unisabana.inventario.Inventario.controlador</a> &gt; <span class="el_source">InventarioController.java</span></div><h1>InventarioController.java</h1><pre class="source lang-java linenums">package co.edu.unisabana.inventario.Inventario.controlador;
+
+import co.edu.unisabana.inventario.Inventario.bd.Producto;
+import co.edu.unisabana.inventario.Inventario.controlador.dto.ProductoDTO;
+import co.edu.unisabana.inventario.Inventario.controlador.dto.RespuestaDTO;
+import co.edu.unisabana.inventario.Inventario.logica.InventarioLogica;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+
+@RestController
+@Api(value = &quot;Inventario&quot;, description = &quot;Operaciones relacionadas con la gestiÃ³n de inventario&quot;)
+public class InventarioController {
+
+    public InventarioLogica logica;
+
+<span class="fc" id="L20">    public InventarioController(InventarioLogica logica) {</span>
+<span class="fc" id="L21">        this.logica = logica;</span>
+<span class="fc" id="L22">    }</span>
+
+    @ApiOperation(value = &quot;Crear un producto&quot;, response = Producto.class)
+    @PostMapping(path = &quot;/producto/agregar&quot;)
+    public RespuestaDTO agregarProducto(@RequestBody ProductoDTO productoDTO) {
+        try {
+<span class="fc" id="L28">            logica.agregarProducto(productoDTO);</span>
+<span class="fc" id="L29">            return new RespuestaDTO(&quot;Producto guardado correctamente&quot;);</span>
+<span class="nc" id="L30">        } catch (Exception e) {</span>
+<span class="nc" id="L31">            return new RespuestaDTO(&quot;Se genero un error al guardar el producto&quot;);</span>
+        }
+
+    }
+
+    @ApiOperation(value = &quot;Eliminar un producto por su ID&quot;, response = Producto.class)
+    @DeleteMapping(path = &quot;/producto/eliminar&quot;)
+    public RespuestaDTO borrarProducto(@RequestParam int id) {
+        try {
+<span class="fc" id="L40">            logica.eliminarProducto(id);</span>
+<span class="fc" id="L41">            return new RespuestaDTO(&quot;Producto eliminado correctamente&quot;);</span>
+<span class="fc" id="L42">        } catch (Exception e) {</span>
+<span class="fc" id="L43">            return new RespuestaDTO(&quot;El producto no se pudo eliminar&quot;);</span>
+        }
+    }
+
+    @ApiOperation(value = &quot;Actualizar un producto&quot;, response = Producto.class)
+    @PutMapping(path = &quot;/producto/actualizar&quot;)
+    public RespuestaDTO actualizarProducto(@RequestBody ProductoDTO actProducto) {
+        try {
+<span class="fc" id="L51">            logica.cambiarProducto(actProducto.getId(), actProducto);</span>
+<span class="fc" id="L52">            return new RespuestaDTO(&quot;El producto ha actualizado&quot;);</span>
+<span class="fc" id="L53">        } catch (Exception e) {</span>
+<span class="fc" id="L54">            return new RespuestaDTO(&quot;El producto no se pudo actualizar&quot;);</span>
+        }
+    }
+
+    @ApiOperation(value = &quot;Obtener un producto por su ID&quot;, response = Producto.class)
+    @GetMapping(path = &quot;/verProducto/id&quot;)
+    public RespuestaDTO verPorID(@RequestParam int id) {
+        try {
+<span class="fc" id="L62">            logica.verProductoPorID(id);</span>
+<span class="fc" id="L63">            return new RespuestaDTO(&quot;Este es el Producto: &quot; + logica.verProductoPorID(id));</span>
+<span class="nc" id="L64">        } catch (Exception e) {</span>
+<span class="nc" id="L65">            return new RespuestaDTO(&quot;No existe ese ID&quot;);</span>
+        }
+    }
+
+    @ApiOperation(value = &quot;Obtener productos por categorÃ­a&quot;, response = Producto.class)
+    @GetMapping(path = &quot;/verProductoPorCategoria&quot;)
+    public List&lt;Producto&gt; filtrarPorCategoria(@RequestParam(&quot;categoria&quot;) String categoria) {
+<span class="fc" id="L72">        List&lt;Producto&gt; filtroCategoria = logica.filtrarPorCategoria(categoria);</span>
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">        if (filtroCategoria.isEmpty()) {</span>
+<span class="nc" id="L74">            return null;</span>
+        } else {
+<span class="fc" id="L76">            return filtroCategoria;</span>
+        }
+    }
+
+    @ApiOperation(value = &quot;Obtener un stock por su ID&quot;, response = Producto.class)
+    @GetMapping(path = &quot;/verStockPorId&quot;)
+    public int obtenerStockPorId(@RequestParam(&quot;id&quot;) int id) {
+<span class="fc" id="L83">        return logica.obtenerStockPorId(id);</span>
+    }
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>

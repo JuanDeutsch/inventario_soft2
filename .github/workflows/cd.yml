@@ -1,0 +1,20 @@
+name: Continous Delivery
+on:
+  push:
+    branches: ["main"]
+permissions:
+  contents: read
+jobs:
+  cd:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build & push Docker image
+        uses: mr-smithers-excellent/docker-build-push@v6
+        with:
+          image: juandeutsch/inventariosoft2
+          tags: latest
+          registry: docker.io
+          dockerfile: Dockerfile
+          username: ${{ secrets.USUARIO_DOCKER }}
+          password: ${{ secrets.PASS_DOCKER }}
