@@ -1,4 +1,4 @@
-package co.edu.unisabana.inventario.Inventario.configuraciones;
+package co.edu.unisabana.inventario.Inventario.swagger;
 
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.CorsEndpointProperties;
 import org.springframework.boot.actuate.autoconfigure.endpoint.web.WebEndpointProperties;
