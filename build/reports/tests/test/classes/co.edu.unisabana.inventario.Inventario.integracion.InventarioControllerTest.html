@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2.600s</div>
+<div class="counter">1.702s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,42 +79,42 @@
 </thead>
 <tr>
 <td class="success">Dado_categoria_Cuando_controlador_busqueda_por_categoria_Entonces_obtener_productos_por_categoria()</td>
-<td class="success">0.210s</td>
+<td class="success">0.167s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Dado_dto_existente_Cuando_controlador_actualizar_producto_Entonces_actualiza_dto()</td>
-<td class="success">0.051s</td>
+<td class="success">0.037s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Dado_dto_existente_Cuando_controlador_actualizar_producto_Entonces_no_actualiza_dto()</td>
-<td class="success">0.077s</td>
+<td class="success">0.058s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Dado_dto_existente_Cuando_controlador_borrar_producto_Entonces_borra_dto()</td>
-<td class="success">0.056s</td>
+<td class="success">0.049s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Dado_dto_existente_Cuando_controlador_borrar_producto_Entonces_no_borra_dto()</td>
-<td class="success">0.055s</td>
+<td class="success">0.044s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Dado_dto_existente_Cuando_controlador_ver_producto_por_id_Entonces_visualiza_dto_nombre()</td>
-<td class="success">0.088s</td>
+<td class="success">0.064s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Dado_id_producto_Cuando_controlador_obtener_stock_por_id_Entonces_obtener_stock_por_id()</td>
-<td class="success">2.031s</td>
+<td class="success">1.262s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">Dado_no_dto_existente_Cuando_controlador_agregar_producto_Entonces_agrega_dto()</td>
-<td class="success">0.032s</td>
+<td class="success">0.021s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -122,12 +122,12 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-10-26 18:21:20.440  INFO 10444 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [co.edu.unisabana.inventario.Inventario.integracion.InventarioControllerTest], using SpringBootContextLoader
-2023-10-26 18:21:20.444  INFO 10444 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [co.edu.unisabana.inventario.Inventario.integracion.InventarioControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-2023-10-26 18:21:20.445  INFO 10444 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [co.edu.unisabana.inventario.Inventario.integracion.InventarioControllerTest]: InventarioControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-10-26 18:21:20.469  INFO 10444 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration co.edu.unisabana.inventario.Inventario.InventarioApplication for test class co.edu.unisabana.inventario.Inventario.integracion.InventarioControllerTest
-2023-10-26 18:21:20.472  INFO 10444 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
-2023-10-26 18:21:20.473  INFO 10444 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@504afa3c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1a9d9a3e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@158315c8, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@8df2d4f, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@f43bd72, org.springframework.test.context.support.DirtiesContextTestExecutionListener@79f98ace, org.springframework.test.context.transaction.TransactionalTestExecutionListener@74d9fd6c, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@51d13ed, org.springframework.test.context.event.EventPublishingTestExecutionListener@17279611, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@223dd1c1, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@19b47a77, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@74db90d7, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@5fe71743, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@139866a7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@29c5c161]
+<pre>2023-10-26 21:41:42.786  INFO 21072 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [co.edu.unisabana.inventario.Inventario.integracion.InventarioControllerTest], using SpringBootContextLoader
+2023-10-26 21:41:42.789  INFO 21072 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [co.edu.unisabana.inventario.Inventario.integracion.InventarioControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2023-10-26 21:41:42.790  INFO 21072 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [co.edu.unisabana.inventario.Inventario.integracion.InventarioControllerTest]: InventarioControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-10-26 21:41:42.803  INFO 21072 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration co.edu.unisabana.inventario.Inventario.InventarioApplication for test class co.edu.unisabana.inventario.Inventario.integracion.InventarioControllerTest
+2023-10-26 21:41:42.806  INFO 21072 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener]
+2023-10-26 21:41:42.809  INFO 21072 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5fd66298, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@64c46da9, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@455efaa6, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@582b3ae3, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@340541dc, org.springframework.test.context.support.DirtiesContextTestExecutionListener@73ebcbd0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@41d284c1, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@40af423a, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@5ebae052, org.springframework.test.context.event.EventPublishingTestExecutionListener@7322151e, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@26836337, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1c074b4f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@153680ed, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@76dffdb0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4b78a287, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@6d03d594, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4c131131]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -137,28 +137,31 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::               (v2.7.16)
 
-2023-10-26 18:21:20.564  INFO 10444 --- [    Test worker] c.e.u.i.I.i.InventarioControllerTest     : Starting InventarioControllerTest using Java 17.0.9 on LePCbre with PID 10444 (started by Deutsch in C:\Users\Deutsch\Downloads\Inventario)
-2023-10-26 18:21:20.565  INFO 10444 --- [    Test worker] c.e.u.i.I.i.InventarioControllerTest     : The following 1 profile is active: &quot;test&quot;
-2023-10-26 18:21:22.399  INFO 10444 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-10-26 18:21:22.431  INFO 10444 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interfaces.
-2023-10-26 18:21:23.584  INFO 10444 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
-2023-10-26 18:21:23.643  INFO 10444 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-10-26 18:21:23.644  INFO 10444 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
-2023-10-26 18:21:24.294  INFO 10444 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-10-26 18:21:24.294  INFO 10444 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3721 ms
-2023-10-26 18:21:25.056  INFO 10444 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2023-10-26 18:21:25.060  INFO 10444 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2023-10-26 18:21:25.087  INFO 10444 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-10-26 18:21:25.099  INFO 10444 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2023-10-26 18:21:25.169  INFO 10444 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-10-26 18:21:25.170  INFO 10444 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-10-26 18:21:26.256  INFO 10444 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2023-10-26 18:21:26.315  WARN 10444 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-10-26 18:21:27.791  INFO 10444 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 53980 (http) with context path ''
-2023-10-26 18:21:27.965  INFO 10444 --- [    Test worker] c.e.u.i.I.i.InventarioControllerTest     : Started InventarioControllerTest in 7.487 seconds (JVM running for 76.524)
-2023-10-26 18:21:28.915  INFO 10444 --- [o-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-10-26 18:21:28.918  INFO 10444 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-10-26 18:21:28.922  INFO 10444 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-10-26 21:41:42.859  INFO 21072 --- [    Test worker] c.e.u.i.I.i.InventarioControllerTest     : Starting InventarioControllerTest using Java 17.0.8 on DESKTOP-SDDLBL4 with PID 21072 (started by Santi Contreras in D:\U\Arquitectura)
+2023-10-26 21:41:42.859  INFO 21072 --- [    Test worker] c.e.u.i.I.i.InventarioControllerTest     : The following 1 profile is active: &quot;test&quot;
+2023-10-26 21:41:43.644  INFO 21072 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-10-26 21:41:43.660  INFO 21072 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 1 JPA repository interfaces.
+2023-10-26 21:41:44.497  INFO 21072 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-10-26 21:41:44.575  INFO 21072 --- [    Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-10-26 21:41:44.576  INFO 21072 --- [    Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-10-26 21:41:44.910  INFO 21072 --- [    Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-10-26 21:41:44.910  INFO 21072 --- [    Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2047 ms
+2023-10-26 21:41:45.558  INFO 21072 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-10-26 21:41:45.560  INFO 21072 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-10-26 21:41:45.580  INFO 21072 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-10-26 21:41:45.590  INFO 21072 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-10-26 21:41:45.662  INFO 21072 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-10-26 21:41:45.662  INFO 21072 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-10-26 21:41:45.857  WARN 21072 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-10-26 21:41:46.478  INFO 21072 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-10-26 21:41:46.741  WARN 21072 --- [    Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-10-26 21:41:46.741  INFO 21072 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/**']
+2023-10-26 21:41:46.915  INFO 21072 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@55936a3, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39cca34c, org.springframework.security.web.context.SecurityContextPersistenceFilter@35fb66e5, org.springframework.security.web.header.HeaderWriterFilter@5cb96779, org.springframework.security.web.csrf.CsrfFilter@a7b1800, org.springframework.security.web.authentication.logout.LogoutFilter@f202730, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@a59c2d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73c7d21, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@10295010, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@77ba729c, org.springframework.security.web.session.SessionManagementFilter@6792d90f, org.springframework.security.web.access.ExceptionTranslationFilter@39717093, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c0c5687]
+2023-10-26 21:41:47.678  INFO 21072 --- [    Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 55399 (http) with context path ''
+2023-10-26 21:41:47.794  INFO 21072 --- [    Test worker] c.e.u.i.I.i.InventarioControllerTest     : Started InventarioControllerTest in 4.981 seconds (JVM running for 39.327)
+2023-10-26 21:41:48.415  INFO 21072 --- [o-auto-1-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-10-26 21:41:48.415  INFO 21072 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-10-26 21:41:48.419  INFO 21072 --- [o-auto-1-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
 </pre>
 </span>
 </div>
@@ -170,7 +173,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.2.1</a> at 26/10/2023, 6:21:33 p. m.</p>
+<a href="http://www.gradle.org">Gradle 8.2.1</a> at 26/10/2023, 9:41:50 p. m.</p>
 </div>
 </div>
 </body>
