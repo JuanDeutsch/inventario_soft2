@@ -6,12 +6,12 @@ services:
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:
-          MYSQL_ROOT_PASSWORD: 12345
+          MYSQL_ROOT_PASSWORD: 12345678
           MYSQL_DATABASE: "inventario1"
           MYSQL_USER: "inventario_rest"
           MYSQL_PASSWORD: 12345678
         ports:
-          - 8090:3306
+          - 3306:3306
   inventario:
         build:
           context: .
