@@ -83,5 +83,10 @@ public class InventarioController {
         return logica.obtenerStockPorId(id);
     }
 
+    @GetMapping(path = "/saludar")
+    public void saludar(){
+        System.out.println("Hola");
+    }
+
 }
 
