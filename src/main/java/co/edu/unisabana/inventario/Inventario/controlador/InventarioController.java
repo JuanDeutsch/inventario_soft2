@@ -82,6 +82,5 @@ public class InventarioController {
     public int obtenerStockPorId(@RequestParam("id") int id) {
         return logica.obtenerStockPorId(id);
     }
-
 }
 
