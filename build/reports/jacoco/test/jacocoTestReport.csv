@@ -1,7 +1,4 @@
 GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
-Inventario,co.edu.unisabana.inventario.Inventario.seguridad,configSeguridadTest,0,16,0,0,0,3,0,3,0,3
-Inventario,co.edu.unisabana.inventario.Inventario.seguridad,configSeguridad,0,22,0,0,0,8,0,2,0,2
-Inventario,co.edu.unisabana.inventario.Inventario.controlador,InventarioController,14,78,1,1,5,19,1,7,0,7
-Inventario,co.edu.unisabana.inventario.Inventario.swagger,SwaggerConfig,6,76,4,2,0,16,3,4,0,4
-Inventario,co.edu.unisabana.inventario.Inventario.logica,InventarioLogica,0,107,0,0,0,28,0,7,0,7
-Inventario,co.edu.unisabana.inventario.Inventario,InventarioApplication,5,3,0,0,2,1,1,1,1,1
+Inventario,co.edu.unisabana.inventario.logica,InventarioLogica,0,107,0,0,0,28,0,7,0,7
+Inventario,co.edu.unisabana.inventario.controlador,InventarioController,14,78,1,1,5,19,1,7,0,7
+Inventario,co.edu.unisabana.inventario,InventarioApplication,5,3,0,0,2,1,1,1,1,1

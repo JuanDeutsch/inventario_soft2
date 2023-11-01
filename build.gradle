@@ -18,9 +18,9 @@ java {
 pitest {
     junit5PluginVersion = '1.0.0'
     excludedClasses = [
-            'co.edu.unisabana.inventario.Inventario.controlador.dto.**',
-            'co.edu.unisabana.inventario.Inventario.bd.**',
-            'co.edu.unisabana.inventario.Inventario.configuraciones.**'
+            'co.edu.unisabana.inventario.controlador.dto.**',
+            'co.edu.unisabana.inventario.bd.**',
+            'co.edu.unisabana.inventario.configuraciones.**'
     ]
 }
 
@@ -67,9 +67,11 @@ jacocoTestReport {
     afterEvaluate {
         classDirectories = files(classDirectories.files.collect {
             fileTree(dir: it,
-                    exclude: ['co/edu/unisabana/inventario/Inventario/controlador/dto',
-                              'co/edu/unisabana/inventario/Inventario/bd',
-                              'co/edu/unisabana/inventario/Inventario/configuraciones'])
+                    exclude: ['co/edu/unisabana/inventario/controlador/dto',
+                              'co/edu/unisabana/inventario/bd',
+                              'co/edu/unisabana/inventario/configuraciones',
+                              'co/edu/unisabana/inventario/swagger',
+                              'co/edu/unisabana/inventario/seguridad'])
         })
     }
 
@@ -83,7 +85,13 @@ sonarqube {
     properties {
         property("sonar.projectName", "Inventario")
         property "sonar.java.coveragePlugin", "jacoco"
-        property "sonar.coverage.jacoco.xmlReportPath", "${buildDir}/reports/jacoco.xml"
-        property "sonar.exclusions", "co/edu/unisabana/inventario/Inventario/controlador/dto/**"
+        property "sonar.coverage.jacoco.xmlReportPath", "${project.buildDir}/reports/jacoco.xml"
+        property("sonar.coverage.exclusions", [
+                "**/co/edu/unisabana/inventario/controlador/dto/**",
+                "**/co/edu/unisabana/inventario/swagger/**",
+                "**/co/edu/unisabana/inventario/bd/**",
+                "**/co/edu/unisabana/inventario/configuraciones/**",
+                "**/co/edu/unisabana/inventario/seguridad/**"
+        ])
     }
 }
