@@ -89,7 +89,7 @@ class InventarioControllerTest {
         assertEquals("Producto guardado correctamente", respuestaAgregar.getBody().getMensaje());
 
         ResponseEntity<RespuestaDTO> respuestaVer = rest.exchange(
-                "/verProducto/id?id=" + dtoVer.getId(), HttpMethod.GET, new HttpEntity<>(dtoVer), RespuestaDTO.class);
+                "/producto/verProducto/id?id=" + dtoVer.getId(), HttpMethod.GET, new HttpEntity<>(dtoVer), RespuestaDTO.class);
 
         RespuestaDTO respuesta = respuestaVer.getBody();
         assertTrue(respuesta.getMensaje().contains("Guitarra"));
@@ -103,7 +103,7 @@ class InventarioControllerTest {
         assertEquals("Producto guardado correctamente", respuesta.getBody().getMensaje());
 
         ResponseEntity<List<Producto>> response = rest.exchange(
-                "/verProductoPorCategoria?categoria=" + dtoCat.getCategoria(),
+                "/producto/verProductoPorCategoria?categoria=" + dtoCat.getCategoria(),
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<>() {
@@ -124,7 +124,7 @@ class InventarioControllerTest {
         assertEquals("Producto guardado correctamente", respuesta.getBody().getMensaje());
 
         ResponseEntity<Integer> response = rest.exchange(
-                "/verStockPorId?id=" + dtoSto.getId(),
+                "/producto/verStockPorId?id=" + dtoSto.getId(),
                 HttpMethod.GET,
                 null,
                 Integer.class);

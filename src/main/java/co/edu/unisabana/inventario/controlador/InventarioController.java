@@ -56,7 +56,7 @@ public class InventarioController {
     }
 
     @ApiOperation(value = "Obtener un producto por su ID", response = Producto.class)
-    @GetMapping(path = "/verProducto/id")
+    @GetMapping(path = "/producto/verProducto/id")
     public RespuestaDTO verPorID(@RequestParam int id) {
         try {
             logica.verProductoPorID(id);
@@ -67,7 +67,7 @@ public class InventarioController {
     }
 
     @ApiOperation(value = "Obtener productos por categoría", response = Producto.class)
-    @GetMapping(path = "/verProductoPorCategoria")
+    @GetMapping(path = "/producto/verProductoPorCategoria")
     public List<Producto> filtrarPorCategoria(@RequestParam("categoria") String categoria) {
         List<Producto> filtroCategoria = logica.filtrarPorCategoria(categoria);
         if (filtroCategoria.isEmpty()) {
@@ -78,7 +78,7 @@ public class InventarioController {
     }
 
     @ApiOperation(value = "Obtener un stock por su ID", response = Producto.class)
-    @GetMapping(path = "/verStockPorId")
+    @GetMapping(path = "/producto/verStockPorId")
     public int obtenerStockPorId(@RequestParam("id") int id) {
         return logica.obtenerStockPorId(id);
     }
