@@ -1,0 +1,42 @@
+2023-11-16 18:21:50.310  INFO 13764 --- [Test worker] c.e.u.i.i.InventarioControllerTest       : Starting InventarioControllerTest using Java 17.0.9 on LePCbre with PID 13764 (started by Deutsch in C:\Users\Deutsch\Downloads\Inventario)
+2023-11-16 18:21:50.314  INFO 13764 --- [Test worker] c.e.u.i.i.InventarioControllerTest       : The following 1 profile is active: "test"
+2023-11-16 18:21:58.411  INFO 13764 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-16 18:21:58.791  INFO 13764 --- [Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 286 ms. Found 1 JPA repository interfaces.
+2023-11-16 18:22:07.719  INFO 13764 --- [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2023-11-16 18:22:07.883  INFO 13764 --- [Test worker] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-11-16 18:22:07.885  INFO 13764 --- [Test worker] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.80]
+2023-11-16 18:22:08.989  INFO 13764 --- [Test worker] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-11-16 18:22:08.991  INFO 13764 --- [Test worker] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 18524 ms
+2023-11-16 18:22:13.009  INFO 13764 --- [Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-16 18:22:14.038  INFO 13764 --- [Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-11-16 18:22:15.805  INFO 13764 --- [Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-11-16 18:22:17.080  INFO 13764 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-16 18:22:19.596  INFO 13764 --- [Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-16 18:22:19.734  INFO 13764 --- [Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-11-16 18:22:26.287  INFO 13764 --- [Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-11-16 18:22:26.386  INFO 13764 --- [Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-16 18:22:29.378  WARN 13764 --- [Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-16 18:22:35.912  INFO 13764 --- [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2023-11-16 18:22:37.666  WARN 13764 --- [Test worker] o.s.s.c.a.web.builders.WebSecurity       : You are asking Spring Security to ignore Ant [pattern='/**']. This is not recommended -- please use permitAll via HttpSecurity#authorizeHttpRequests instead.
+2023-11-16 18:22:37.668  INFO 13764 --- [Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will not secure Ant [pattern='/**']
+2023-11-16 18:22:38.062  INFO 13764 --- [Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7717f16c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@598d00e5, org.springframework.security.web.context.SecurityContextPersistenceFilter@5c70ad27, org.springframework.security.web.header.HeaderWriterFilter@1ed14ca1, org.springframework.security.web.csrf.CsrfFilter@62c7095c, org.springframework.security.web.authentication.logout.LogoutFilter@7b59b261, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2d15387e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6df3efab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@17b779f9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6340fdce, org.springframework.security.web.session.SessionManagementFilter@1767129e, org.springframework.security.web.access.ExceptionTranslationFilter@2289ee66, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@13a5d745]
+2023-11-16 18:22:40.428  INFO 13764 --- [Test worker] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 58532 (http) with context path ''
+2023-11-16 18:22:40.633  INFO 13764 --- [Test worker] c.e.u.i.i.InventarioControllerTest       : Started InventarioControllerTest in 52.158 seconds (JVM running for 61.98)
+2023-11-16 18:22:44.505  INFO 13764 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-11-16 18:22:44.508  INFO 13764 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-11-16 18:22:44.511  INFO 13764 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-11-16 18:22:44.732  INFO 13764 --- [http-nio-auto-1-exec-1] c.e.u.i.c.InventarioController           : Agregando producto en la BD
+2023-11-16 18:22:45.462  INFO 13764 --- [http-nio-auto-1-exec-3] c.e.u.i.c.InventarioController           : Producto con ID 7 eliminado
+2023-11-16 18:22:45.492  INFO 13764 --- [http-nio-auto-1-exec-3] c.e.u.i.c.InventarioController           : Producto con ID 7 no ha podido ser eliminado
+2023-11-16 18:22:45.515  INFO 13764 --- [http-nio-auto-1-exec-4] c.e.u.i.c.InventarioController           : Agregando producto en la BD
+2023-11-16 18:22:47.155  INFO 13764 --- [http-nio-auto-1-exec-6] c.e.u.i.c.InventarioController           : Agregando producto en la BD
+2023-11-16 18:22:47.217  INFO 13764 --- [http-nio-auto-1-exec-8] c.e.u.i.c.InventarioController           : Producto actualizado
+2023-11-16 18:22:47.255  INFO 13764 --- [http-nio-auto-1-exec-8] c.e.u.i.c.InventarioController           : Actualización de producto fallida
+2023-11-16 18:22:47.297  INFO 13764 --- [http-nio-auto-1-exec-9] c.e.u.i.c.InventarioController           : Agregando producto en la BD
+2023-11-16 18:22:47.310  INFO 13764 --- [http-nio-auto-1-exec-10] c.e.u.i.c.InventarioController           : Producto actualizado
+2023-11-16 18:22:47.341  INFO 13764 --- [http-nio-auto-1-exec-1] c.e.u.i.c.InventarioController           : Agregando producto en la BD
+2023-11-16 18:22:47.353  INFO 13764 --- [http-nio-auto-1-exec-2] c.e.u.i.c.InventarioController           : Producto con ID 7 eliminado
+2023-11-16 18:22:47.388  INFO 13764 --- [http-nio-auto-1-exec-3] c.e.u.i.c.InventarioController           : Agregando producto en la BD
+2023-11-16 18:22:48.820  INFO 13764 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-11-16 18:22:48.828  INFO 13764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-11-16 18:22:48.833  INFO 13764 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
