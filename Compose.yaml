@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  mysql-service:
+        container_name: MySQL-Container
+        image: 'mysql:5.7'
+        command: --default-authentication-plugin=mysql_native_password
+        restart: always
+        environment:
+          MYSQL_ROOT_PASSWORD: 12345678
+          MYSQL_DATABASE: "inventario1"
+          MYSQL_USER: "inventario_rest"
+          MYSQL_PASSWORD: 12345678
+        ports:
+          - 3306:3306
+  inventario:
+        build:
+          context: .
+        container_name: Inventario-Container
+        volumes:
+          - .:/app
+        restart: always
+        ports:
+          - 8080:8080
+        depends_on:
+          - mysql-service
