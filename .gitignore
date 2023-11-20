@@ -25,6 +25,8 @@ bin/
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+inventario.log
+inventario.log.2023-11-16.0.gz
 
 ### NetBeans ###
 /nbproject/private/
