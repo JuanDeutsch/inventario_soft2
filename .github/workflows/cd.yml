@@ -1,5 +1,7 @@
 name: Continous Delivery
 on:
+  push:
+    branches: ["master"]
   pull_request:
     branches: ["master"]
 permissions:
@@ -9,6 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Instalar Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Ejecutar Gradle
+        run: chmod +x ./gradlew
+      - name: Compilacion
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: build
       - name: Build & push Docker image
         uses: mr-smithers-excellent/docker-build-push@v6
         with:

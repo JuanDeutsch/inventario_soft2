@@ -13,7 +13,7 @@ public class ConfigSeguridad extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/**").authenticated()
+                .antMatchers("/producto/**").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .httpBasic();
