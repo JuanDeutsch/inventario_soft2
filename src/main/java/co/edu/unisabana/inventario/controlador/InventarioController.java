@@ -29,11 +29,11 @@ public class InventarioController {
     @PostMapping(path = "/producto/agregar")
     public RespuestaDTO agregarProducto(@RequestBody ProductoDTO productoDTO) {
         try {
-            log.info("Agregando producto en la BD");
+            log.info("Agregando producto con ID "+productoDTO.getId()+" en la BD");
             logica.agregarProducto(productoDTO);
             return new RespuestaDTO("Producto guardado correctamente");
         } catch (Exception e) {
-            log.info("El producto no se ha podido guardar");
+            log.info("Producto con ID "+productoDTO.getId()+" no se ha podido guardar");
             return new RespuestaDTO("Se genero un error al guardar el producto");
         }
 
@@ -47,7 +47,7 @@ public class InventarioController {
             logica.eliminarProducto(id);
             return new RespuestaDTO("Producto eliminado correctamente");
         } catch (Exception e) {
-            log.info("Producto con ID "+id+" no ha podido ser eliminado");
+            log.info("Eliminación de producto con ID "+id+" fallida");
             return new RespuestaDTO("El producto no se pudo eliminar");
         }
     }
@@ -56,11 +56,11 @@ public class InventarioController {
     @PutMapping(path = "/producto/actualizar")
     public RespuestaDTO actualizarProducto(@RequestBody ProductoDTO actProducto) {
         try {
-            log.info("Producto actualizado");
+            log.info("Producto con ID "+actProducto.getId()+" actualizado");
             logica.cambiarProducto(actProducto.getId(), actProducto);
             return new RespuestaDTO("El producto ha actualizado");
         } catch (Exception e) {
-            log.info("Actualización de producto fallida");
+            log.info("Actualización de producto con ID "+actProducto.getId()+" fallida");
             return new RespuestaDTO("El producto no se pudo actualizar");
         }
     }
@@ -68,11 +68,13 @@ public class InventarioController {
     @ApiOperation(value = "Obtener un producto por su ID", response = Producto.class)
     @GetMapping(path = "/producto/verProducto/id")
     public RespuestaDTO verPorID(@RequestParam int id) {
-        try {
-            logica.verProductoPorID(id);
-            return new RespuestaDTO("Este es el Producto: " + logica.verProductoPorID(id));
-        } catch (Exception e) {
+        if (logica.verProductoPorID(id).isEmpty()){
+            log.info("Filtro por ID "+id+" fallida");
             return new RespuestaDTO("No existe ese ID");
+        }
+        else{
+            log.info("Filtro por ID "+id+" desplegada");
+            return new RespuestaDTO("Este es el Producto: " + logica.verProductoPorID(id));
         }
     }
 
@@ -81,8 +83,10 @@ public class InventarioController {
     public List<Producto> filtrarPorCategoria(@RequestParam("categoria") String categoria) {
         List<Producto> filtroCategoria = logica.filtrarPorCategoria(categoria);
         if (filtroCategoria.isEmpty()) {
+            log.info("Filtro por categoria "+categoria+" fallida");
             return null;
         } else {
+            log.info("Filtro por categoria "+categoria+" desplegada");
             return filtroCategoria;
         }
     }
@@ -90,6 +94,7 @@ public class InventarioController {
     @ApiOperation(value = "Obtener un stock por su ID", response = Producto.class)
     @GetMapping(path = "/producto/verStockPorId")
     public int obtenerStockPorId(@RequestParam("id") int id) {
+        log.info("Stock de producto con ID "+id+" desplegada");
         return logica.obtenerStockPorId(id);
     }
 }
