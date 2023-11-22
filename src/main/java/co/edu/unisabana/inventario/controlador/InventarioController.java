@@ -8,24 +8,23 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-import org.yaml.snakeyaml.events.Event;
-
-import javax.swing.text.html.parser.Entity;
 import java.util.List;
 
 
 @RestController
+@CrossOrigin
 @Slf4j
 @Api(value = "Inventario", description = "Operaciones relacionadas con la gestión de inventario")
 public class InventarioController {
 
-    private InventarioLogica logica;
+    private final InventarioLogica logica;
 
     public InventarioController(InventarioLogica logica) {
         this.logica = logica;
     }
 
     @ApiOperation(value = "Crear un producto", response = Producto.class)
+    @CrossOrigin("http://localhost:5500/Agregar/")
     @PostMapping(path = "/producto/agregar")
     public RespuestaDTO agregarProducto(@RequestBody ProductoDTO productoDTO) {
         try {
