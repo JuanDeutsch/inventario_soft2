@@ -96,6 +96,18 @@ class InventarioControllerTest {
     }
 
     @Test
+    void Dado_dto_existente_Cuando_controlador_ver_producto_por_id_Entonces_no_visualiza_dto_nombre() {
+
+        ProductoDTO dtoVer = new ProductoDTO(13, "Guitarra", "Instrumento de cuerdas", 20, 25, "Instrumentos");
+
+        ResponseEntity<RespuestaDTO> respuestaVer = rest.exchange(
+                "/producto/verProducto/id?id=" + dtoVer.getId(), HttpMethod.GET, new HttpEntity<>(dtoVer), RespuestaDTO.class);
+
+        RespuestaDTO respuesta = respuestaVer.getBody();
+        assertFalse(respuesta.getMensaje().contains("Guitarra"));
+    }
+
+    @Test
     void Dado_categoria_Cuando_controlador_busqueda_por_categoria_Entonces_obtener_productos_por_categoria() {
         ProductoDTO dtoCat = new ProductoDTO(8, "Guitarra", "Intrumento de cuerdas", 13, 15, "Instrumentos");
         ResponseEntity<RespuestaDTO> respuesta = rest.postForEntity(

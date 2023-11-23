@@ -20,7 +20,9 @@ pitest {
     excludedClasses = [
             'co.edu.unisabana.inventario.controlador.dto.**',
             'co.edu.unisabana.inventario.bd.**',
-            'co.edu.unisabana.inventario.configuraciones.**'
+            'co.edu.unisabana.inventario.seguridad.**',
+            'co.edu.unisabana.inventario.swagger.**',
+            'co.edu.unisabana.inventario.web.**'
     ]
 }
 
@@ -74,7 +76,8 @@ jacocoTestReport {
                               'co/edu/unisabana/inventario/bd',
                               'co/edu/unisabana/inventario/configuraciones',
                               'co/edu/unisabana/inventario/swagger',
-                              'co/edu/unisabana/inventario/seguridad'])
+                              'co/edu/unisabana/inventario/seguridad',
+                              'co/edu/unisabana/inventario/web'])
         })
     }
 
@@ -94,7 +97,8 @@ sonarqube {
                 "**/co/edu/unisabana/inventario/swagger/**",
                 "**/co/edu/unisabana/inventario/bd/**",
                 "**/co/edu/unisabana/inventario/configuraciones/**",
-                "**/co/edu/unisabana/inventario/seguridad/**"
+                "**/co/edu/unisabana/inventario/seguridad/**",
+                "**/co/edu/unisabana/inventario/web/**"
         ])
     }
 }
