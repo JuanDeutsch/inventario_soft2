@@ -109,3 +109,5 @@ Para poder ver el Jacoco nos debemos dirigir a *build/reports/jacoco/test/html/i
 El uso de Mutation test fue para verificar la fuerza de nuestros test, pero que hace mutation test, lo que realiza es medir la efectividad de las pruebas identificando la capacidad del conjunto de pruebas para detectar defectos en el código fuente, y ya dicho anteriormente, para verificar la fuerza de nuestros test
 ![ImagenJacoco](imagenes/MutationTest.png)
 Para poder ver el coverage del Mutation Test no tenemos que dirigir a *build/reports/pitest/202309291430/index.html* y escoger el navegador que queremos usar para ver el coverage
+
+La documentación final se encuentra dentro de la carpeta de DOCS
