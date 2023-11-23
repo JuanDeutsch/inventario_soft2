@@ -10,9 +10,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-
+@CrossOrigin(origins = "localhost:5500/**")
 @RestController
-@CrossOrigin
 @Slf4j
 @Api(value = "Inventario", description = "Operaciones relacionadas con la gestión de inventario")
 public class InventarioController {
@@ -24,7 +23,6 @@ public class InventarioController {
     }
 
     @ApiOperation(value = "Crear un producto", response = Producto.class)
-    @CrossOrigin("http://localhost:5500/Agregar/")
     @PostMapping(path = "/producto/agregar")
     public RespuestaDTO agregarProducto(@RequestBody ProductoDTO productoDTO) {
         try {
