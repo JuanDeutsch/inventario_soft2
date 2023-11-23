@@ -20,7 +20,9 @@ pitest {
     excludedClasses = [
             'co.edu.unisabana.inventario.controlador.dto.**',
             'co.edu.unisabana.inventario.bd.**',
-            'co.edu.unisabana.inventario.configuraciones.**'
+            'co.edu.unisabana.inventario.seguridad.**',
+            'co.edu.unisabana.inventario.swagger.**',
+            'co.edu.unisabana.inventario.web.**'
     ]
 }
 
@@ -40,6 +42,9 @@ dependencies {
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6:3.1.1.RELEASE'
     implementation 'org.springframework.security:spring-security-test'
     implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation "junit:junit:4.13"
     testImplementation("com.h2database:h2:2.2.220")
@@ -71,7 +76,8 @@ jacocoTestReport {
                               'co/edu/unisabana/inventario/bd',
                               'co/edu/unisabana/inventario/configuraciones',
                               'co/edu/unisabana/inventario/swagger',
-                              'co/edu/unisabana/inventario/seguridad'])
+                              'co/edu/unisabana/inventario/seguridad',
+                              'co/edu/unisabana/inventario/web'])
         })
     }
 
@@ -91,7 +97,8 @@ sonarqube {
                 "**/co/edu/unisabana/inventario/swagger/**",
                 "**/co/edu/unisabana/inventario/bd/**",
                 "**/co/edu/unisabana/inventario/configuraciones/**",
-                "**/co/edu/unisabana/inventario/seguridad/**"
+                "**/co/edu/unisabana/inventario/seguridad/**",
+                "**/co/edu/unisabana/inventario/web/**"
         ])
     }
 }
